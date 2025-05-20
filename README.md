@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# AI Agent Chat – React Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React-based chat UI for interacting with the Ollama-powered AI agent gateway.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- WhatsApp-style chat UI
+- Dynamic message rendering with different styles
+- Handles text input and display of agent responses
+- Supports auto-scrolling, keyboard shortcuts, loading state
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Install Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+### 2. Start the Development Server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
+```
 
-### `npm run build`
+App runs at:  
+ http://localhost:3001
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend Connection
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This frontend sends user messages to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+http://localhost:3000/chat
+```
 
-### `npm run eject`
+Make sure the `ollama-agent` backend is running before sending messages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How to Use
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Type your message and press `Enter` or click **Send**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Sample Messages to Test
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```plaintext
+Please pay for subscriber 1001 in April 2025
+What is the bill for subscriber 1001 in April 2025
+Show me the detailed bill for subscriber 1001 in April 2025
+```
 
-## Learn More
+### Possible Agent Responses
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- "Fatura başarıyla ödendi."
+- "Tutar: $60.0, Ödeme durumu: Ödenmedi"
+- A detailed breakdown of internet/phone usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notes
 
-### Code Splitting
+- You may receive `Unknown intent` if the model fails to understand the message.
+- Detailed usage results return an object – currently rendered as raw JSON.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Demo Recording
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Watch the demo on Google Drive](https://drive.google.com/file/d/13Lgwy78dEQnIj_9DNvpFfylsF_-jtaZ8/view?usp=sharing)
